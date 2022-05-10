@@ -1,9 +1,11 @@
 #include "monty.h"
+
 /**
- *sub - sub two top elements of the stack
- *@head: pointer a stack
- *@line_number: number of the line
+ *_sub - subtracts the two top elements of the stack from the second element.
+ *@head: pointer pointer to the list.
+ *@line_number: number of the line.
  **/
+
 void _sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
