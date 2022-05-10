@@ -10,7 +10,7 @@ void pall(stack_t **head, unsigned int __attribute__((unused)) line_number)
 {
 	stack_t *tmp = NULL;
 
-	if (head != NULL || *head != NULL)
+	if (head == NULL || *head == NULL)
 		return;
 
 	tmp = *head;
