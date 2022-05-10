@@ -39,8 +39,8 @@ int main(int argc, char *argv[])
 	token = strtok(buf, "\n\t $");
 	while (token != NULL)
 	{
-		if(strcmp(token, "push") == 0)
-		{    
+		if (strcmp(token, "push") == 0)
+		{
 			token = strtok(NULL, "\n\t $");
 			push(&head, line_number, token);
 		}
