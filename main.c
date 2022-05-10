@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
-		printf("Error: Can't open file %s", argv[1]);
+		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	buf = malloc(size_buf);
@@ -36,16 +36,25 @@ int main(int argc, char *argv[])
 		close(fd);
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(buf, "\n\t ");
+	token = strtok(buf, "\n\t $");
 	while (token != NULL)
 	{
-		if (get_op_func(token) != '\0')
+		if(strcmp(token, "push") == 0)
+		{    
+			token = strtok(NULL, "\n\t $");
+			push(&head, line_number, token);	
+			line_number++;
+		}
+		else if (get_op_func(token) != '\0')
 			get_op_func(token)(&head, line_number);
 		else
 		{
 			free_doubly_ll(&head);
 			printf("L%d: unknown instruction %s\n", line_number, token);
 			exit(EXIT_FAILURE);
+		}
+		line_number++;
+		token = strtok(NULL, "\n\t $");
 	}
 	return (0);
 }

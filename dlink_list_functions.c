@@ -27,9 +27,9 @@ int add_dnodeint(stack_t **head, int n)
 	}
 	/* Insertar nuevo nodo al inicio */
 	new_node->next = *head;
+	(*head)->prev = new_node;
 	*head = new_node;
 	new_node->prev = NULL;
-
 	return (0);
 }
 
