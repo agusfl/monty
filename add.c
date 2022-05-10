@@ -1,9 +1,11 @@
 #include "monty.h"
+
 /**
- *_add - add two top elements of the stack
- *@head: pointer a stack
- *@line_number: number of the line
+ *_add - add the two top elements of the stack.
+ *@head: pointer pointer to the list.
+ *@line_number: number of the line.
  **/
+
 void _add(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
