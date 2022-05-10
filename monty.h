@@ -49,5 +49,6 @@ void del_end_node(stack_t **head);
 void free_doubly_ll(stack_t **head);
 int check_number(char *str);
 void push(stack_t **head, unsigned int line_number, char *num_str);
+void pall(stack_t **head, unsigned int line_number);
 
 #endif
