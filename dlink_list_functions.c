@@ -34,11 +34,11 @@ int add_dnodeint(stack_t **head, int n)
 }
 
 /**
- * del_end_node - deletes node at beginning of the list.
+ * del_node - deletes node at beginning of the list.
  * @head: pointer to head of the list.
  */
 
-void del_end_node(stack_t **head)
+void del_node(stack_t **head)
 {
 	stack_t *del_node = NULL;
 

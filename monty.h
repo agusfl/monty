@@ -42,14 +42,15 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* Main function Prototypes */
+/* Main functions Prototypes */
 
 void (*get_op_func(char *token_op))(stack_t **stack, unsigned int line_number);
 int add_dnodeint(stack_t **head, int n);
-void del_end_node(stack_t **head);
+void del_node(stack_t **head);
 void push(stack_t **head, unsigned int line_number, char *num_str);
 void pall(stack_t **head, unsigned int line_number);
 void pint(stack_t **head, unsigned int line_number);
+void pop(stack_t **head, unsigned int line_number);
 
 /* Auxiliar functions */
 
