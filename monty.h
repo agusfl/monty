@@ -49,6 +49,7 @@ int add_dnodeint(stack_t **head, int n);
 void del_end_node(stack_t **head);
 void push(stack_t **head, unsigned int line_number, char *num_str);
 void pall(stack_t **head, unsigned int line_number);
+void pint(stack_t **head, unsigned int line_number);
 
 /* Auxiliar functions */
 
