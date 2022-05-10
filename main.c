@@ -57,5 +57,7 @@ int main(int argc, char *argv[])
 		line_number++;
 		token = strtok(NULL, "\n\t $");
 	}
+	free_doubly_ll(&head), free(buf);
+	close(fd);
 	return (0);
 }
