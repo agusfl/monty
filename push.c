@@ -13,7 +13,7 @@ void push(stack_t **head, unsigned int line_number, char *num_str)
 		return;
 	if (check_number(num_str) == 2)
 	{
-		printf("L%u: usage: push integer\n", line_number);
+		dprintf(2, "L%u: usage: push integer\n", line_number);
 		free_doubly_ll(head);
 		exit(EXIT_FAILURE);
 	}

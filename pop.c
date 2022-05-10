@@ -10,7 +10,7 @@ void pop(stack_t **head, unsigned int line_number)
 {
 	if (head == NULL || *head == NULL)
 	{
-		printf("L%u: can't pop an empty stack\n", line_number);
+		dprintf(2, "L%u: can't pop an empty stack\n", line_number);
 		free_doubly_ll(head);
 		exit(EXIT_FAILURE);
 	}

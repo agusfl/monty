@@ -14,13 +14,13 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("USAGE: monty file\n");
+		dprintf(2, "USAGE: monty file\n"); /* print on standar error (is the 2 fd) */
 		exit(EXIT_FAILURE);
 	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
-		printf("Error: Can't open file %s\n", argv[1]);
+		dprintf(2, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	buf = _calloc(sizeof(char), size_buf);
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 		else
 		{
 			free_doubly_ll(&head);
-			printf("L%d: unknown instruction %s\n", line_number, token);
+			dprintf(2, "L%d: unknown instruction %s\n", line_number, token);
 			exit(EXIT_FAILURE);
 		}
 		line_number++;
