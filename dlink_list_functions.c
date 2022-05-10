@@ -63,15 +63,15 @@ void del_end_node(stack_t **head)
 
 void free_doubly_ll(stack_t **head)
 {
-	stack_t **tmp = NULL;
+	stack_t *tmp = NULL;
 
 	if (head == NULL) /*lista vacia - no existe */
 		return;
 
 	while (*head != NULL)
 	{
-		*tmp = *head;
+		tmp = *head;
 		*head = (*head)->next;
-		free(*tmp);
+		free(tmp);
 	}
 }
