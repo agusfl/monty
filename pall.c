@@ -6,11 +6,11 @@
  * @line_number: bytecode line number.
  */
 
-void pall(stack_t **head, unsigned int line_number)
+void pall(stack_t **head, unsigned int __attribute__((unused)) line_number)
 {
 	stack_t *tmp = NULL;
 
-	if (h != NULL || *h != NULL)
+	if (head != NULL || *head != NULL)
 		return;
 
 	tmp = *head;

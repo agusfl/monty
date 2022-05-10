@@ -42,11 +42,14 @@ int main(int argc, char *argv[])
 		if(strcmp(token, "push") == 0)
 		{    
 			token = strtok(NULL, "\n\t $");
-			push(&head, line_number, token);	
-			line_number++;
+			push(&head, line_number, token);
+			printf("hola\n");
 		}
-		else if (get_op_func(token) != '\0')
+		else if (get_op_func(token) != 0)
+		{
 			get_op_func(token)(&head, line_number);
+			 printf("hola1\n");
+		}
 		else
 		{
 			free_doubly_ll(&head);
