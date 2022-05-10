@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	buf = malloc(size_buf);
+	buf = _calloc(sizeof(char), size_buf);
 	if (buf == NULL)
 	{
 		close(fd);

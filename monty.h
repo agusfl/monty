@@ -42,13 +42,18 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* Function Prototypes */
+/* Main function Prototypes */
+
 void (*get_op_func(char *token_op))(stack_t **stack, unsigned int line_number);
 int add_dnodeint(stack_t **head, int n);
 void del_end_node(stack_t **head);
-void free_doubly_ll(stack_t **head);
-int check_number(char *str);
 void push(stack_t **head, unsigned int line_number, char *num_str);
 void pall(stack_t **head, unsigned int line_number);
+
+/* Auxiliar functions */
+
+void *_calloc(unsigned int nmemb, unsigned int size);
+int check_number(char *str);
+void free_doubly_ll(stack_t **head);
 
 #endif
