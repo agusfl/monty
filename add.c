@@ -10,13 +10,14 @@ void _add(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL || (*head)->next == NULL)
 	{
 		dprintf(2, "L%u: can't add, stack too short\n", line_number);
 		free_doubly_ll(head);
 		exit(EXIT_FAILURE);
 	}
 	*head = (*head)->next;
+	/*asignamos el siguiente nodo a head, luego usamos el aux*/
 	(*head)->n = (*head)->n + aux->n;
 	(*head)->prev = NULL;
 	del_node(&aux);

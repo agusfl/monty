@@ -10,7 +10,7 @@ void _sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL || (*head)->next == NULL)
 	{
 		dprintf(2, "L%u: can't sub, stack too short\n", line_number);
 		free_doubly_ll(head);
