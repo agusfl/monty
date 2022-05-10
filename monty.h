@@ -47,5 +47,7 @@ void (*get_op_func(char *token_op))(stack_t **stack, unsigned int line_number);
 int *add_dnodeint(stack_t **head, int n);
 void del_end_node(stack_t **head);
 void free_stack_t(stack_t **head);
+int check_number(char *str);
+void push(stack_t **head, unsigned int line_number, char *num_str);
 
 #endif
