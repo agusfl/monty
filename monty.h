@@ -53,7 +53,7 @@ void pint(stack_t **head, unsigned int line_number);
 void pop(stack_t **head, unsigned int line_number);
 void swap(stack_t **head, unsigned int line_number);
 void nop(stack_t **head, unsigned int line_number);
-
+void _add(stack_t **head, unsigned int line_number);
 /* Auxiliar functions */
 
 void *_calloc(unsigned int nmemb, unsigned int size);
