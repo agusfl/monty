@@ -13,7 +13,7 @@ void pall(stack_t **head, unsigned int __attribute__((unused)) line_number)
 	if (head == NULL || *head == NULL)
 		return;
 
-	tmp = *head;
+	tmp = *head; /* se setea tmp en head, head queda en el comienzo de la lista */
 	while (tmp != NULL)
 	{
 		printf("%d\n", tmp->n);
