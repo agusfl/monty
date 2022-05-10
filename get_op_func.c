@@ -9,7 +9,8 @@
 void (*get_op_func(char *token_op))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t opcodes[] = {
-		{"pop", pop},
+		{"push", push},
+		/*{"pop", pop},
 		{"pall", pall},
 		{"pint", pint},
 		{"swap", swap},
@@ -22,7 +23,7 @@ void (*get_op_func(char *token_op))(stack_t **stack, unsigned int line_number)
 		{"pstr", pstr},
 		{"nop", nop},
 		{"rotl", rotl},
-		{"rotr", rotr},
+		{"rotr", rotr},*/
 		{NULL, NULL}
 	};
 	int i = 0;

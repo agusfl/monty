@@ -19,7 +19,7 @@ void push(stack_t **head, unsigned int line_number, char *num_str)
 	}
 	else
 	{
-		if (add_dnodeint(head, atoi(n)) == 2)
+		if (add_dnodeint(head, atoi(num_str)) == 2)
 		{
 			free_doubly_ll(head);
 			exit(EXIT_FAILURE);

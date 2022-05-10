@@ -9,7 +9,8 @@ int main(int argc, char *argv[])
 {
 	int fd = 0, buf_read = 0, size_buf = 6000;
 	char *buf = NULL, *token = NULL;
-	int iter = 0;
+	unsigned int line_number = 0;
+	stack_t *head = NULL;
 
 	if (argc != 2)
 	{
@@ -35,10 +36,16 @@ int main(int argc, char *argv[])
 		close(fd);
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(buf, "\n\t ")
+	token = strtok(buf, "\n\t ");
 	while (token != NULL)
 	{
-
+		if (get_op_func(token) != '\0')
+			get_op_func(token)(&head, line_number);
+		else
+		{
+			free_doubly_ll(&head);
+			printf("L%d: unknown instruction %s\n", line_number, token);
+			exit(EXIT_FAILURE);
 	}
 	return (0);
 }
