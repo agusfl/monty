@@ -7,7 +7,7 @@
  * Return: 0 on success, or 2 if it failed.
  */
 
-int *add_dnodeint(stack_t **head, int n)
+int add_dnodeint(stack_t **head, int n)
 {
 	stack_t *new_node = NULL;
 
@@ -57,21 +57,21 @@ void del_end_node(stack_t **head)
 }
 
 /**
- * free_stack_t - frees a doubly linked list with int values.
+ * free_doubly_ll - frees a doubly linked list with int values.
  * @head: pointer to head of the list
  */
 
-void free_stack_t(stack_t **head)
+void free_doubly_ll(stack_t **head)
 {
-	stack_t *tmp;
+	stack_t **tmp = NULL;
 
 	if (head == NULL) /*lista vacia - no existe */
 		return;
 
 	while (*head != NULL)
 	{
-		tmp = head;
-		head = head->next;
-		free(tmp);
+		*tmp = *head;
+		*head = (*head)->next;
+		free(*tmp);
 	}
 }
