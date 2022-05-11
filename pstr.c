@@ -12,7 +12,7 @@ void pstr(stack_t **head, unsigned int __attribute__((unused)) line_number)
 
 	if (head == NULL || *head == NULL)
 	{
-		return;
+		printf("\n");
 	}
 	while (aux->n != 0 && aux != NULL && aux->n >= 0 && aux->n <= 127)
 	{
