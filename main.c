@@ -26,10 +26,10 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&buf, &buf_read, fd) != -1)
+	while (getline(&buf, &buf_read, fd) != -1) /* leemos la info del fd */
 	{
 		token = strtok(buf, "\n\t$ "); /*tokenizamos */
-		if (strcmp(token, "push") == 0)
+		if (strcmp(token, "push") == 0) /* funcion push */
 		{
 			token = strtok(NULL, "\n\t$ ");
 			push(&head, line_number, token);
