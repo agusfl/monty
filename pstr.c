@@ -10,10 +10,6 @@ void pstr(stack_t **head, unsigned int __attribute__((unused)) line_number)
 {
 	stack_t *aux = *head;
 
-	if (head == NULL || *head == NULL)
-	{
-		printf("\n");
-	}
 	while (aux->n != 0 && aux != NULL && aux->n >= 0 && aux->n <= 127)
 	{
 		printf("%c", aux->n); /*usamos el %c para imprimir los num como caracter*/
