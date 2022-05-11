@@ -18,9 +18,9 @@ void (*get_op_func(char *token_op))(stack_t **stack, unsigned int line_number)
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
+		{"nop", nop},
 		/*{"pchar", pchar},
 		{"pstr", pstr},
-		{"nop", nop},
 		{"rotl", rotl},
 		{"rotr", rotr},*/
 		{NULL, NULL}
