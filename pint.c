@@ -8,10 +8,17 @@
 
 void pint(stack_t **head, unsigned int line_number)
 {
+	stack_t *aux;
+
 	if (head == NULL || *head == NULL)
 	{
 		dprintf(2, "L%u: can't pint, stack empty\n", line_number);
+		free(buf);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*head)->n);
+	aux = *head;
+
+	while (aux->next != NULL)
+		aux = aux->next;
+	printf("%d\n", aux->n);
 }
