@@ -6,14 +6,13 @@
  * @line_number: bytecode line number.
  */
 
-void pstr(stack_t **head, unsigned int line_number)
+void pstr(stack_t **head, unsigned int __attribute__((unused)) line_number)
 {
 	stack_t *aux = *head;
 
 	if (head == NULL || *head == NULL)
 	{
-		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
+		return;
 	}
 	while (aux->n != 0 && aux != NULL && aux->n >= 0 && aux->n <= 127)
 	{
