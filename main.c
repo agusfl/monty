@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
 	buf = _calloc(sizeof(char), size_buf); /*usamos calloc para inicializar en 0*/
 	if (buf == NULL)
 	{
-		close(fd);
 		return (0);
 	}
 	buf_read = read(fd, buf, size_buf);
@@ -53,7 +52,7 @@ int main(int argc, char *argv[])
 		else /* else si la funcion no esta definida en get op func */
 		{
 			free_doubly_ll(&head);
-			dprintf(2, "L%d: unknown instruction %s\n", line_number, token);
+			dprintf(2, "L%u: unknown instruction %s\n", line_number, token);
 			exit(EXIT_FAILURE);
 		}
 		line_number++;
