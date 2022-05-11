@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n"); /* print on standar error*/
 		exit(EXIT_FAILURE);
 	}
-	fd = fopen(argv[1], "r");
-	if (fd == NULL) /* Si fd es igual a -1 es porque hubo un error */
+	fd = fopen(argv[1], "r"); /*usamos fopen para usarlo con getline */
+	if (fd == NULL) /* Si fd es igual a NULL es porque hubo un error */
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
@@ -43,7 +43,6 @@ int main(int argc, char *argv[])
 			exit(EXIT_FAILURE);
 		}
 		line_number++;
-		token = strtok(NULL, "\n\t$ ");
 	}
 	free_doubly_ll(&head), free(buf);
 	fclose(fd);
