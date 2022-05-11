@@ -10,7 +10,7 @@ void _add(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
 
-	if (head == NULL || (*head)->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
 		dprintf(2, "L%u: can't add, stack too short\n", line_number);
 		free_doubly_ll(head);
