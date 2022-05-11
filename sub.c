@@ -9,10 +9,10 @@
 void _sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
+
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		dprintf(2, "L%u: can't sub, stack too short\n", line_number);
-		/*free(buf);  liberamos buffer usado en el main.c - buf --> global variable*/
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	*head = (*head)->next;

@@ -12,15 +12,13 @@ void _div(stack_t **head, unsigned int line_number)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		dprintf(2, "L%u: can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		free_doubly_ll(head);
-		/*free(buf);  liberamos buffer usado en el main.c - buf --> global variable*/
 		exit(EXIT_FAILURE);
 	}
 	if ((*head)->n == 0 || (*head)->next->n == 0)
 	{
-		printf("L%u: division by zero\n", line_number);
-		/*free(buf);*/
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 

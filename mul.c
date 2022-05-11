@@ -12,9 +12,8 @@ void _mul(stack_t **head, unsigned int line_number)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		dprintf(2, "L%u: can't mul, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
 		free_doubly_ll(head);
-		/*free(buf);  liberamos buffer usado en el main.c - buf --> global variable*/
 		exit(EXIT_FAILURE);
 	}
 	*head = (*head)->next;
