@@ -47,13 +47,11 @@ int main(int argc, char *argv[])
 			push(&head, line_number, token);
 		}
 		else if (get_op_func(token) != NULL) /*llamada a getopfunc si es dist NULL*/
-		{
 			get_op_func(token)(&head, line_number);
-		}
 		else /* else si la funcion no esta definida en get op func */
 		{
-			free_doubly_ll(&head);
 			dprintf(2, "L%u: unknown instruction %s\n", line_number, token);
+			free_doubly_ll(&head), free(buf), close(fd);
 			exit(EXIT_FAILURE);
 		}
 		line_number++;
