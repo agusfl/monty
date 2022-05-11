@@ -8,19 +8,18 @@
 
 void _rotl(stack_t **head, unsigned int __attribute__((unused)) line_number)
 {
-	stack_t *aux = *head;
-	int num = 0;
+	stack_t *aux;
 
 	if ((*head)->next != NULL)
 	{
-		while ((*head)->next != NULL)
-		{
-			num = (*head)->n;
-			*head = (*head)->next;
-			(*head)->prev->n = (*head)->n;
-			(*head)->n = num;
-		}
+		aux = *head;
+		while (aux->next != NULL)
+			aux = aux->next;
+		aux->next = *head;
+		(*head)->prev = aux;
+		(*head)->next->prev = NULL;
+		*head = (*head)->next;
+		aux->next->next = NULL;
 	}
-	*head = aux;
 }
 
