@@ -6,13 +6,13 @@
  *@line_number: number of the line.
  **/
 
-void _div(stack_t **head, unsigned int line_number)
+void _mod(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		dprintf(2, "L%u: can't div, stack too short\n", line_number);
+		dprintf(2, "L%u: can't mod, stack too short\n", line_number);
 		free_doubly_ll(head);
 		free(buf); /* liberamos buffer usado en el main.c - buf --> global variable*/
 		exit(EXIT_FAILURE);
@@ -25,7 +25,7 @@ void _div(stack_t **head, unsigned int line_number)
 	}
 
 	*head = (*head)->next;
-	(*head)->n = (*head)->n / aux->n;
+	(*head)->n = (*head)->n % aux->n;
 	(*head)->prev = NULL;
 	del_node(&aux);
 }
