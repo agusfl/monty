@@ -13,6 +13,10 @@ void _rotl(stack_t **head, unsigned int line_number)
 
 	line_number += 1;
 	line_number -= 1;
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		exit(EXIT_FAILURE);
+	}
 	while ((*head)->next != NULL)
 	{
 		num = (*head)->n;
