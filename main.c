@@ -5,10 +5,12 @@
  *@argv: argument vector
  *Return: 0 on success or EXIT_FAILURE on failure.
  **/
+char *buf = NULL;
+
 int main(int argc, char *argv[])
 {
 	int fd = 0, buf_read = 0, size_buf = 6000;
-	char *buf = NULL, *token = NULL;
+	char *token = NULL;
 	unsigned int line_number = 1;
 	stack_t *head = NULL;
 

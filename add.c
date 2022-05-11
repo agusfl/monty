@@ -5,6 +5,7 @@
  *@head: pointer pointer to the list.
  *@line_number: number of the line.
  **/
+extern char * buf;
 
 void _add(stack_t **head, unsigned int line_number)
 {
@@ -14,6 +15,7 @@ void _add(stack_t **head, unsigned int line_number)
 	{
 		dprintf(2, "L%u: can't add, stack too short\n", line_number);
 		free_doubly_ll(head);
+		free(buf);
 		exit(EXIT_FAILURE);
 	}
 	*head = (*head)->next;

@@ -4,6 +4,7 @@
  *@head: Pointer pointer to the head of a doubly linked list.
  *@line_number: bytecode line number
  **/
+extern char * buf;
 void swap(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
@@ -11,6 +12,8 @@ void swap(stack_t **head, unsigned int line_number)
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		printf("L%u: can't swap, stack too", line_number);
+		free_doubly_ll(head);
+		free(buf);
 		exit(EXIT_FAILURE);
 	}
 

@@ -5,7 +5,7 @@
  *@head: pointer pointer to the list.
  *@line_number: number of the line.
  **/
-
+extern char * buf;
 void _sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
@@ -14,6 +14,7 @@ void _sub(stack_t **head, unsigned int line_number)
 	{
 		dprintf(2, "L%u: can't sub, stack too short\n", line_number);
 		free_doubly_ll(head);
+		free(buf);
 		exit(EXIT_FAILURE);
 	}
 	*head = (*head)->next;
