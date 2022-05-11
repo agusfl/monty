@@ -1,11 +1,11 @@
 #include "monty.h"
+
 /**
  *main - monty interpreter
  *@argc: argument counter
  *@argv: argument vector
  *Return: 0 on success or EXIT_FAILURE on failure.
  **/
-char *buf = NULL;
 
 int main(int argc, char *argv[])
 {
@@ -20,25 +20,25 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
+	if (fd == -1) /* Si fd es igual a -1 es porque hubo un error */
 	{
 		dprintf(2, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	buf = _calloc(sizeof(char), size_buf);
+	buf = _calloc(sizeof(char), size_buf); /*usamos calloc para inicializar en 0*/
 	if (buf == NULL)
 	{
 		close(fd);
 		return (0);
 	}
 	buf_read = read(fd, buf, size_buf);
-	if (buf_read == -1)
+	if (buf_read == -1) /* Si da -1 es porque hubo un error */
 	{
 		free(buf);
 		close(fd);
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(buf, "\n\t $");
+	token = strtok(buf, "\n\t $"); /*tokenizamos */
 	while (token != NULL)
 	{
 		if (strcmp(token, "push") == 0)
@@ -46,11 +46,11 @@ int main(int argc, char *argv[])
 			token = strtok(NULL, "\n\t $");
 			push(&head, line_number, token);
 		}
-		else if (get_op_func(token) != 0)
+		else if (get_op_func(token) != NULL) /*llamada a getopfunc si es dist NULL*/
 		{
 			get_op_func(token)(&head, line_number);
 		}
-		else
+		else /* else si la funcion no esta definida en get op func */
 		{
 			free_doubly_ll(&head);
 			dprintf(2, "L%d: unknown instruction %s\n", line_number, token);

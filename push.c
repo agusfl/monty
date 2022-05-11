@@ -6,7 +6,6 @@
  * @line_number: bytecode line number
  * @num_str: string to check for integers
  */
-extern char * buf;
 
 void push(stack_t **head, unsigned int line_number, char *num_str)
 {

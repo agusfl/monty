@@ -5,7 +5,6 @@
  * @head: pointer at the beginning of the list.
  * @line_number: bytecode line number.
  */
-extern char * buf;
 
 void pint(stack_t **head, unsigned int line_number)
 {

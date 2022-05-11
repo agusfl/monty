@@ -1,10 +1,11 @@
 #include "monty.h"
+
 /**
  *swap - swaps the top two elements of the stack.
  *@head: Pointer pointer to the head of a doubly linked list.
  *@line_number: bytecode line number
  **/
-extern char * buf;
+
 void swap(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux = *head;
@@ -13,7 +14,7 @@ void swap(stack_t **head, unsigned int line_number)
 	{
 		printf("L%u: can't swap, stack too", line_number);
 		free_doubly_ll(head);
-		free(buf);
+		free(buf); /* liberamos buffer usado en el main.c - buf --> global variable*/
 		exit(EXIT_FAILURE);
 	}
 
