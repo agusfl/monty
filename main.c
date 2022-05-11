@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 	buf = _calloc(sizeof(char), size_buf); /*usamos calloc para inicializar en 0*/
 	if (buf == NULL)
 	{
+		close(fd);
 		return (0);
 	}
 	buf_read = read(fd, buf, size_buf);
