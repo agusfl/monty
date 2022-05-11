@@ -8,7 +8,7 @@
 
 void swap(stack_t **head, unsigned int line_number)
 {
-	stack_t *aux = *head;
+	int num = 0;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
@@ -16,12 +16,10 @@ void swap(stack_t **head, unsigned int line_number)
 		free_doubly_ll(head);
 		exit(EXIT_FAILURE);
 	}
-
+	num = (*head)->n;
 	*head = (*head)->next;
-	aux->next = (*head)->next;
-	(*head)->next->prev = aux;
-	(*head)->next = aux;
-	aux->prev = *head;
-	(*head)->prev = NULL;
+	(*head)->prev->n = (*head)->n;
+	(*head)->n = num;
+	*head = (*head)->prev;
 }
 
