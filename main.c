@@ -38,12 +38,12 @@ int main(int argc, char *argv[])
 		close(fd);
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(buf, "\n\t "); /*tokenizamos */
+	token = strtok(buf, "\n\t$ "); /*tokenizamos */
 	while (token != NULL)
 	{
 		if (strcmp(token, "push") == 0)
 		{
-			token = strtok(NULL, "\n\t ");
+			token = strtok(NULL, "\n\t$ ");
 			push(&head, line_number, token);
 		}
 		else if (get_op_func(token) != NULL) /*llamada a getopfunc si es dist NULL*/
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 			exit(EXIT_FAILURE);
 		}
 		line_number++;
-		token = strtok(NULL, "\n\t ");
+		token = strtok(NULL, "\n\t$ ");
 	}
 	free_doubly_ll(&head), free(buf);
 	close(fd);
