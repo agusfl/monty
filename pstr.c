@@ -10,14 +10,20 @@ void pstr(stack_t **head, unsigned int __attribute__((unused)) line_number)
 {
 	stack_t *aux = *head;
 
-	if (*head != NULL)
+	if (*head == NULL)
 	{
-		while (aux->n != 0 && aux != NULL && aux->n >= 0 && aux->n <= 127)
+		printf("\n");
+		return;
+	}
+	else
+	{
+		while (aux != NULL && aux->n != 0)
 		{
-			printf("%c", aux->n); /*usamos el %c para imprimir los num como caracter*/
+			if (aux->n >= 1 && aux->n <= 127)
+				printf("%c", aux->n); /*usamos el %c para imprimir los num como caracter*/
 			aux = aux->next;
 		}
-	}
 	printf("\n"); /* printeamos el salto de linea despues del string */
+	}
 
 }
