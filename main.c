@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[])
 {
-	int fd = 0, buf_read = 0, size_buf = 11000;
+	int fd = 0, buf_read = 0, size_buf = 11000, push_var = 0;
 	char *token = NULL, *buf = NULL;
 	unsigned int line_number = 1;
 	stack_t *head = NULL;
@@ -41,10 +41,19 @@ int main(int argc, char *argv[])
 	token = strtok(buf, "\n\t$ "); /*tokenizamos */
 	while (token != NULL)
 	{
-		if (strcmp(token, "push") == 0)
+		if (push_var == 2)
 		{
-			token = strtok(NULL, "\n\t$ ");
 			push(&head, line_number, token);
+			push_var = 0;
+			token = strtok(NULL, "\n\t$ ");
+			line_number++;
+			continue;
+		}
+		else if (strcmp(token, "push") == 0)
+		{
+			push_var = 2;
+			token = strtok(NULL, "\n\t$ ");
+			continue;
 		}
 		else if (get_op_func(token) != NULL) /*llamada a getopfunc si es dist NULL*/
 			get_op_func(token)(&head, line_number);
