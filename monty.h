@@ -11,7 +11,7 @@
 #include <ctype.h>
 #include <fcntl.h>
 
-char *buf; /* Global variable buffer */
+/*char *buf;  Global variable buffer */
 
 /* Structures */
 /**

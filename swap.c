@@ -14,7 +14,7 @@ void swap(stack_t **head, unsigned int line_number)
 	{
 		printf("L%u: can't swap, stack too", line_number);
 		free_doubly_ll(head);
-		free(buf); /* liberamos buffer usado en el main.c - buf --> global variable*/
+		/*free(buf);  liberamos buffer usado en el main.c - buf --> global variable*/
 		exit(EXIT_FAILURE);
 	}
 
