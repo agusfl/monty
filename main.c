@@ -49,6 +49,5 @@ int main(int argc, char *argv[])
 		line_number++;
 	}
 	free_doubly_ll(&head), free(buf);
-	fclose(fd);
 	return (0);
 }
