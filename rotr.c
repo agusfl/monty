@@ -8,11 +8,13 @@
 
 void _rotr(stack_t **head, unsigned int __attribute__((unused)) line_number)
 {
-	stack_t *aux;
+	stack_t *aux = *head;
+
+	if (*head == NULL || aux->next == NULL)
+		return;
 
 	if ((*head)->next != NULL)
 	{
-		aux = *head;
 		while (aux->next != NULL)
 			aux = aux->next;
 		(*head)->prev = aux;
