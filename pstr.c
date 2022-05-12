@@ -21,6 +21,8 @@ void pstr(stack_t **head, unsigned int __attribute__((unused)) line_number)
 		{
 			if (aux->n >= 1 && aux->n <= 127)
 				printf("%c", aux->n); /*usamos el %c para imprimir los num como caracter*/
+			else
+				break;
 			aux = aux->next;
 		}
 	printf("\n"); /* printeamos el salto de linea despues del string */
