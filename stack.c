@@ -9,5 +9,5 @@ void stack(stack_t **head, unsigned int line_number)
 {
 	(void)head;
 	(void)line_number;
-	tipo = 0;
+	stack_or_queue = 0;
 }

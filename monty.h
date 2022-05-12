@@ -11,8 +11,9 @@
 #include <ctype.h>
 #include <fcntl.h>
 
-extern int tipo;
-/*char *buf;  Global variable buffer */
+/* Global variable to see if it is a stack or a queue - 0 is stack */
+
+extern int stack_or_queue;
 
 /* Structures */
 /**

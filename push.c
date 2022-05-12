@@ -17,9 +17,9 @@ void push(stack_t **head, unsigned int line_number, char *num_str)
 		free_doubly_ll(head);
 		exit(EXIT_FAILURE);
 	}
-	else
+	else /* chequeamos si es una stack o queue */
 	{
-		if (tipo == 0)
+		if (stack_or_queue == 0) /* Si es cero es una stack */
 		{
 			if (add_dnodeint(head, atoi(num_str)) == 2)
 			{
@@ -27,7 +27,7 @@ void push(stack_t **head, unsigned int line_number, char *num_str)
 			exit(EXIT_FAILURE);
 			}
 		}
-		else
+		else /* queue */
 		{
 			if (add_dnodeint_end(head, atoi(num_str)) == 2)
 			{
