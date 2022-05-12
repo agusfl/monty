@@ -1,13 +1,13 @@
 #include "monty.h"
 
+int stack_or_queue = 0; /* setea como stack */
+
 /**
  *main - monty interpreter
  *@argc: argument counter
  *@argv: argument vector
  *Return: 0 on success or EXIT_FAILURE on failure.
  **/
-
-int stack_or_queue = 0; /* setea como stack */
 
 int main(int argc, char *argv[])
 {
