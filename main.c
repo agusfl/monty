@@ -31,8 +31,8 @@ int main(int argc, char *argv[])
 	while (getline(&buf, &buf_read, fd) != -1) /* leemos la info del fd */
 	{
 		token = strtok(buf, "\n\t$ "); /*tokenizamos */
-		if (token == NULL || token[0] == '#') /* agregamos la opcion de comentarios*/
-			continue;
+		/**if (token == NULL || token[0] == '#')*/ /* agregamos la opcion de comentarios*/
+			/*continue;*/
 		if (strcmp(token, "push") == 0) /* funcion push */
 		{
 			token = strtok(NULL, "\n\t$ ");
