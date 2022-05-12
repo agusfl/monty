@@ -10,7 +10,7 @@ void pstr(stack_t **head, unsigned int __attribute__((unused)) line_number)
 {
 	stack_t *aux = *head;
 
-	if (*head == NULL)
+	if (*head == NULL || head == NULL || aux == NULL)
 	{
 		printf("\n");
 		return;
