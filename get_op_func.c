@@ -23,6 +23,8 @@ void (*get_op_func(char *token_op))(stack_t **stack, unsigned int line_number)
 		{"pstr", pstr},
 		{"rotl", _rotl},
 		{"rotr", _rotr},
+		{"queue", queue},
+		{"stack", stack},
 		{NULL, NULL}
 	};
 	int i = 0;

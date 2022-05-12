@@ -11,6 +11,7 @@
 #include <ctype.h>
 #include <fcntl.h>
 
+extern int tipo;
 /*char *buf;  Global variable buffer */
 
 /* Structures */
@@ -64,6 +65,9 @@ void pchar(stack_t **head, unsigned int line_number);
 void _rotl(stack_t **head, unsigned int line_number);
 void pstr(stack_t **head, unsigned int line_number);
 void _rotr(stack_t **head, unsigned int __attribute__((unused)) line_number);
+int add_dnodeint_end(stack_t **head, const int n);
+void queue(stack_t __attribute__((unused))  **head, unsigned int line_number);
+void stack(stack_t __attribute__((unused))  **head, unsigned int line_number);
 
 /* Auxiliar functions */
 

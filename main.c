@@ -1,5 +1,6 @@
 #include "monty.h"
 
+int tipo = 0;
 /**
  *main - monty interpreter
  *@argc: argument counter

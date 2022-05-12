@@ -32,7 +32,41 @@ int add_dnodeint(stack_t **head, int n)
 	new_node->prev = NULL;
 	return (0);
 }
+/**
+ *add_dnodeint_end - main
+ *@head: head
+ *@n: int
+ *Return: lista
+ **/
+int add_dnodeint_end(stack_t **head, const int n)
+{
+	stack_t *new_node;
 
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		return (2);
+	}
+	new_node->n = n;
+	new_node->prev = NULL;
+	new_node->next = NULL;
+
+	if ((*head) == NULL)
+	{
+		(*head) = new_node;
+		return (0);
+	}
+	while ((*head)->next != NULL)
+	{
+	(*head) = (*head)->next;
+	}
+	(*head)->next = new_node;
+	new_node->prev = (*head);
+	while ((*head)->prev != NULL)
+		*head = (*head)->prev;
+	return (0);
+}
 /**
  * del_node - deletes node at beginning of the list.
  * @head: pointer to head of the list.
